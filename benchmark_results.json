@@ -1,0 +1,85 @@
+{
+  "generated_at": "2026-05-13T12:26:32.130026Z",
+  "corpus_size": 10,
+  "results": [
+    {
+      "query": "How does rate limiting work?",
+      "expanded_query": "How does rate limiting work? system design architecture performance scalability reliability distributed cloud infrastructure",
+      "rerank_occurred": true,
+      "strategy_a": [
+        {
+          "rank": 1,
+          "doc_id": "doc_005",
+          "score": 0.637664,
+          "text_preview": "Rate limiting protects APIs from abuse and ensures fair usage under peak load. Token-bucket and leaky-bucket algorithms ...",
+          "full_text": "Rate limiting protects APIs from abuse and ensures fair usage under peak load. Token-bucket and leaky-bucket algorithms are common implementations. When a client exceeds its quota, the server returns HTTP 429 Too Many Requests. Distributed rate limiters use Redis to share counters across multiple API gateway instances, maintaining consistency even when traffic is routed through different nodes."
+        },
+        {
+          "rank": 2,
+          "doc_id": "doc_001",
+          "score": 0.322017,
+          "text_preview": "Horizontal scaling in distributed systems involves adding more nodes to a cluster to handle increased load. When traffic...",
+          "full_text": "Horizontal scaling in distributed systems involves adding more nodes to a cluster to handle increased load. When traffic spikes during peak hours, an auto-scaling group automatically provisions new instances based on CPU or request-rate thresholds. Load balancers distribute requests across healthy nodes using round-robin or least-connections algorithms, ensuring no single server becomes a bottleneck."
+        },
+        {
+          "rank": 3,
+          "doc_id": "doc_003",
+          "score": 0.290755,
+          "text_preview": "A message queue such as Apache Kafka decouples producers from consumers and acts as a buffer during traffic surges. When...",
+          "full_text": "A message queue such as Apache Kafka decouples producers from consumers and acts as a buffer during traffic surges. When the ingestion rate exceeds the processing capacity, messages accumulate in partitioned topics. Consumer groups read from these partitions in parallel, providing back-pressure control and preventing downstream services from being overwhelmed under peak load conditions."
+        },
+        {
+          "rank": 4,
+          "doc_id": "doc_002",
+          "score": 0.214991,
+          "text_preview": "Kubernetes manages containerized workloads by scheduling pods onto nodes that have sufficient CPU and memory resources. ...",
+          "full_text": "Kubernetes manages containerized workloads by scheduling pods onto nodes that have sufficient CPU and memory resources. The Horizontal Pod Autoscaler (HPA) monitors custom metrics such as requests-per-second and automatically scales the number of replicas. During high-demand periods the cluster expands, and during low-traffic windows it scales down to reduce costs."
+        },
+        {
+          "rank": 5,
+          "doc_id": "doc_008",
+          "score": 0.200485,
+          "text_preview": "Circuit breakers prevent cascading failures in microservice architectures. When a downstream service starts returning er...",
+          "full_text": "Circuit breakers prevent cascading failures in microservice architectures. When a downstream service starts returning errors or timing out, the circuit breaker trips to the open state, immediately returning a fallback response instead of waiting. After a configured cool-down period it transitions to half-open, allowing a probe request through. If successful the circuit closes, restoring normal traffic flow and improving system resilience under degraded conditions."
+        }
+      ],
+      "strategy_b": [
+        {
+          "rank": 1,
+          "doc_id": "doc_005",
+          "score": 0.601815,
+          "text_preview": "Rate limiting protects APIs from abuse and ensures fair usage under peak load. Token-bucket and leaky-bucket algorithms ...",
+          "full_text": "Rate limiting protects APIs from abuse and ensures fair usage under peak load. Token-bucket and leaky-bucket algorithms are common implementations. When a client exceeds its quota, the server returns HTTP 429 Too Many Requests. Distributed rate limiters use Redis to share counters across multiple API gateway instances, maintaining consistency even when traffic is routed through different nodes."
+        },
+        {
+          "rank": 2,
+          "doc_id": "doc_001",
+          "score": 0.454555,
+          "text_preview": "Horizontal scaling in distributed systems involves adding more nodes to a cluster to handle increased load. When traffic...",
+          "full_text": "Horizontal scaling in distributed systems involves adding more nodes to a cluster to handle increased load. When traffic spikes during peak hours, an auto-scaling group automatically provisions new instances based on CPU or request-rate thresholds. Load balancers distribute requests across healthy nodes using round-robin or least-connections algorithms, ensuring no single server becomes a bottleneck."
+        },
+        {
+          "rank": 3,
+          "doc_id": "doc_002",
+          "score": 0.400312,
+          "text_preview": "Kubernetes manages containerized workloads by scheduling pods onto nodes that have sufficient CPU and memory resources. ...",
+          "full_text": "Kubernetes manages containerized workloads by scheduling pods onto nodes that have sufficient CPU and memory resources. The Horizontal Pod Autoscaler (HPA) monitors custom metrics such as requests-per-second and automatically scales the number of replicas. During high-demand periods the cluster expands, and during low-traffic windows it scales down to reduce costs."
+        },
+        {
+          "rank": 4,
+          "doc_id": "doc_003",
+          "score": 0.368045,
+          "text_preview": "A message queue such as Apache Kafka decouples producers from consumers and acts as a buffer during traffic surges. When...",
+          "full_text": "A message queue such as Apache Kafka decouples producers from consumers and acts as a buffer during traffic surges. When the ingestion rate exceeds the processing capacity, messages accumulate in partitioned topics. Consumer groups read from these partitions in parallel, providing back-pressure control and preventing downstream services from being overwhelmed under peak load conditions."
+        },
+        {
+          "rank": 5,
+          "doc_id": "doc_010",
+          "score": 0.329884,
+          "text_preview": "Observability in production systems relies on three pillars: logs, metrics, and traces. Structured logs provide human-re...",
+          "full_text": "Observability in production systems relies on three pillars: logs, metrics, and traces. Structured logs provide human-readable event records; metrics expose time-series data for dashboards and alerting; distributed traces correlate requests across service boundaries. During incidents such as a traffic surge or latency spike, engineers use tools like Cloud Monitoring, Grafana, and Jaeger to diagnose root causes and measure the impact on end-user experience."
+        }
+      ]
+    }
+  ]
+}
